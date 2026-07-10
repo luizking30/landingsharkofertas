@@ -446,6 +446,41 @@ a {
   text-align: center;
 }
 
+/* Promoções */
+.deals__grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.deal-card {
+  background: rgba(10, 22, 41, 0.6);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.08);
+}
+
+.deal-card__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.deal-card__caption {
+  padding: 1rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* CTA Final */
 .final-cta {
   text-align: center;
@@ -604,6 +639,10 @@ a {
   }
 
   .testimonials__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .deals__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
