@@ -81,16 +81,11 @@
     <section class="hero">
       <div class="container">
         <div class="hero__content">
-          <div class="hero__logo">
-            <img src="logo%20shark%20ofertas.png" alt="Shark Ofertas">
-          </div>
-          <h1 class="hero__title">
-            O tubarão caça.<br>
-            <span class="text-accent">Você economiza.</span>
-          </h1>
-          <p class="hero__subtitle">
-            Você ainda paga preço cheio em 2026? Todo dia, antes de você acordar, o Shark já vasculhou dezenas de lojas. Bug de preço, cupom escondido, oferta relâmpago. Você recebe tudo no WhatsApp, mastigado, com o link. Só apertar e comprar.
-          </p>
+          <picture class="hero__banner">
+            <source media="(max-width: 768px)" srcset="images/baner%20vertical%20mobile.png">
+            <source media="(min-width: 769px)" srcset="images/banner%20horizontal%20desktop.png">
+            <img src="images/banner%20horizontal%20desktop.png" alt="Shark Ofertas - Entre no grupo e aproveite. Ofertas exclusivas todos os dias nos seus apps favoritos." class="hero__banner-img">
+          </picture>
           <div class="hero__buttons">
             <a href="https://chat.whatsapp.com/G2jMVIxrk8y8mB4ER1YMgR" class="btn btn--whatsapp btn--lg" data-track="whatsapp" target="_blank" rel="noopener noreferrer">
               <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

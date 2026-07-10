@@ -118,41 +118,19 @@ a {
   text-align: center;
 }
 
-.hero__logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.hero__logo img {
-  width: clamp(120px, 35vw, 220px);
-  height: auto;
-  border-radius: 50%;
-  border: 3px solid rgba(0, 212, 255, 0.3);
-  box-shadow: 0 0 40px rgba(0, 212, 255, 0.25);
-}
-
-.hero__title {
-  font-size: clamp(2.25rem, 8vw, 3.5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  color: #fff;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.03em;
-}
-
-.hero__title .text-accent {
+.hero__banner {
   display: block;
-  text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+  margin: 0 auto 1.5rem;
+  max-width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-.hero__subtitle {
-  font-size: 1.1rem;
-  color: #94a3b8;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.hero__banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero__buttons {
