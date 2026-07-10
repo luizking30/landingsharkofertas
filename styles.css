@@ -634,7 +634,7 @@ a {
 
   .testimonials__gallery {
     grid-template-columns: repeat(4, 1fr);
-    width: calc(100vw - 6rem);
+    width: calc(100vw - 10rem);
     position: relative;
     left: 50%;
     transform: translateX(-50%);
