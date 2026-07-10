@@ -295,10 +295,18 @@ a {
   height: 38px;
   width: auto;
   max-width: 130px;
+  min-width: 0;
   object-fit: contain;
   opacity: 0.9;
   transition: opacity 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .marquee__logo {
+    max-width: 100px;
+    height: 32px;
+  }
 }
 
 .marquee__logo:hover {
