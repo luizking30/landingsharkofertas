@@ -494,8 +494,15 @@ a {
 }
 
 .about-card__icon {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.75rem;
+  color: #00d4ff;
+}
+
+.about-card__icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .about-card__title {
@@ -530,8 +537,15 @@ a {
 }
 
 .benefit-card__icon {
-  font-size: 1.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-bottom: 0.75rem;
+  color: #00d4ff;
+}
+
+.benefit-card__icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .benefit-card__title {
