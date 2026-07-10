@@ -277,10 +277,14 @@ a {
   display: flex;
   width: max-content;
   animation: marquee-left 55s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-.marquee__track:hover {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .marquee__track:hover {
+    animation-play-state: paused;
+  }
 }
 
 .marquee__content {
@@ -303,9 +307,22 @@ a {
 }
 
 @media (max-width: 480px) {
+  .marquee__content {
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+
   .marquee__logo {
-    max-width: 100px;
-    height: 32px;
+    max-width: 90px;
+    height: 30px;
+  }
+
+  .marquee__logo:hover {
+    transform: none;
+  }
+
+  .marquee__track {
+    animation-duration: 40s;
   }
 }
 
@@ -316,10 +333,10 @@ a {
 
 @keyframes marquee-left {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
