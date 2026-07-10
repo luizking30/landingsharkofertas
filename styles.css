@@ -127,6 +127,14 @@ a {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
+@media (min-width: 769px) {
+  .hero__banner {
+    max-width: 1200px;
+    width: calc(100vw - 2.5rem);
+    border-radius: 1.25rem;
+  }
+}
+
 .hero__banner-img {
   width: 100%;
   height: auto;
