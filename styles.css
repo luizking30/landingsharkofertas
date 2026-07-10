@@ -850,6 +850,16 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .about .container,
+  .benefits .container,
+  .steps .container,
+  .compare .container,
+  .faq .container,
+  .tip .container,
+  .testimonials .container {
+    max-width: 1400px;
+  }
+
   .testimonials__gallery {
     grid-template-columns: repeat(4, 1fr);
     position: relative;
