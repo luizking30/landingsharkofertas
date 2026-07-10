@@ -13,7 +13,7 @@ const SOCIAL_ICONS = {
 // ====== FIM DA CONFIGURAÇÃO CENTRAL ======
 
 // Configuração do Pixel
-const PIXEL_ID = 'SEU_PIXEL_ID';
+const PIXEL_ID = '2569715003498353';
 
 // Rastreamento de eventos do Meta Pixel
 function trackPixel(event, params = {}) {
@@ -59,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (e) => {
       const trackType = link.getAttribute('data-track');
       const href = link.getAttribute('href') || '';
+
+      // Evento específico do banner de cookies
+      if (trackType === 'cookie-accept') {
+        trackCustomEvent('CookieAccept', { location: 'cookie-banner' });
+        return;
+      }
 
       // Limpa o target para pegar apenas o domínio
       let target = 'link';
