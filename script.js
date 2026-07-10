@@ -13,7 +13,7 @@ const SOCIAL_ICONS = {
 // ====== FIM DA CONFIGURAÇÃO CENTRAL ======
 
 // Configuração do Pixel
-const PIXEL_ID = '2569715003498353';
+const PIXEL_ID = '1973919269976475';
 
 // Rastreamento de eventos do Meta Pixel
 function trackPixel(event, params = {}) {
