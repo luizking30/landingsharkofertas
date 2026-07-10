@@ -679,7 +679,11 @@ a {
 
   .testimonials__img--desktop {
     display: block;
-    max-width: 900px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 2rem);
+    max-width: 1280px;
   }
 
   .testimonials__img--mobile {
