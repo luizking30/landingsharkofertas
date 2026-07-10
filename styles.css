@@ -275,15 +275,14 @@ a {
   width: auto;
   max-width: 130px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(1.6);
-  opacity: 0.75;
-  transition: all 0.2s ease;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
 }
 
 .marquee__logo:hover {
-  filter: grayscale(0%) brightness(1);
   opacity: 1;
+  transform: scale(1.05);
 }
 
 @keyframes marquee-left {
