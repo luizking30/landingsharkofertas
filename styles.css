@@ -634,10 +634,11 @@ a {
 
   .testimonials__gallery {
     grid-template-columns: repeat(4, 1fr);
-    width: calc(100vw - 10rem);
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    width: calc(100vw - 2rem);
+    max-width: 1400px;
   }
 
   .footer .container {
