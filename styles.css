@@ -259,6 +259,64 @@ a {
   }
 }
 
+/* Marquee de lojas */
+.marquee {
+  background: #0a1629;
+  border-top: 1px solid rgba(0, 212, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  overflow: hidden;
+}
+
+.marquee__title {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 35s linear infinite;
+}
+
+.marquee__track:hover {
+  animation-play-state: paused;
+}
+
+.marquee__content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+  flex-shrink: 0;
+}
+
+.marquee__logo {
+  height: 38px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.6);
+  opacity: 0.75;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.marquee__logo:hover {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Títulos de seção */
 .section__title {
   font-size: clamp(1.75rem, 6vw, 2.5rem);
