@@ -163,23 +163,6 @@ a {
   margin-bottom: 1.5rem;
 }
 
-.hero__social {
-  color: #64748b;
-  font-size: 0.95rem;
-}
-
-.hero__social .link {
-  color: #00d4ff;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
-  transition: all 0.2s ease;
-}
-
-.hero__social .link:hover {
-  color: #fff;
-  border-bottom-color: #00d4ff;
-}
-
 /* Botões */
 .btn {
   display: inline-flex;
