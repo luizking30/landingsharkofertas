@@ -15,10 +15,34 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/luizking30/landingsharkofertas/main/logo%20shark%20ofertas.png">
   <meta property="og:url" content="https://landingsharkofertas.vercel.app">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#050b14">
+  <link rel="canonical" href="https://landingsharkofertas.vercel.app">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Dados estruturados (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Shark Ofertas",
+    "url": "https://landingsharkofertas.vercel.app",
+    "logo": "https://raw.githubusercontent.com/luizking30/landingsharkofertas/main/logo%20shark%20ofertas.png",
+    "description": "Grupo de promoções e ofertas do Brasil no WhatsApp e Telegram. Bug de preço, cupom escondido e oferta relâmpago.",
+    "sameAs": [
+      "https://chat.whatsapp.com/G2jMVIxrk8y8mB4ER1YMgR",
+      "https://t.me/+8mrY68CbArM2ODA5",
+      "https://www.instagram.com/shark.ofertass"
+    ]
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- CSS -->
@@ -47,6 +71,7 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
   <header class="header">
     <div class="container header__inner">
       <a href="/" class="logo" aria-label="Shark Ofertas">
@@ -76,7 +101,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- Hero -->
     <section class="hero">
       <div class="container">
@@ -84,7 +109,7 @@
           <picture class="hero__banner">
             <source media="(max-width: 768px)" srcset="images/baner%20vertical%20mobile.png">
             <source media="(min-width: 769px)" srcset="images/banner%20horizontal%20desktop.png">
-            <img src="images/banner%20horizontal%20desktop.png" alt="Shark Ofertas - Entre no grupo e aproveite. Ofertas exclusivas todos os dias nos seus apps favoritos." class="hero__banner-img">
+            <img src="images/banner%20horizontal%20desktop.png" alt="Shark Ofertas - Entre no grupo e aproveite. Ofertas exclusivas todos os dias nos seus apps favoritos." class="hero__banner-img" fetchpriority="high">
           </picture>
           <div class="hero__buttons">
             <a href="https://chat.whatsapp.com/G2jMVIxrk8y8mB4ER1YMgR" class="btn btn--whatsapp btn--lg" data-track="whatsapp" target="_blank" rel="noopener noreferrer">
@@ -100,7 +125,6 @@
           <p class="hero__trust">Vem economizar junto com + de <strong>7.653 pessoas</strong> que confiam na Shark Ofertas.</p>
         </div>
       </div>
-      <div class="hero__wave" aria-hidden="true"></div>
     </section>
 
     <!-- Lojas monitoradas -->
@@ -247,7 +271,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="footer__text">© 2026 Shark Ofertas. Todos os direitos reservados.</p>
+      <p class="footer__text">© <span id="current-year">2026</span> Shark Ofertas. Todos os direitos reservados.</p>
       <div class="footer__links">
         <a href="https://www.instagram.com/shark.ofertass" class="footer__link" data-track="instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://t.me/+8mrY68CbArM2ODA5" class="footer__link" data-track="telegram" target="_blank" rel="noopener noreferrer">Telegram</a>

@@ -1,3 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40">
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2D3277">mercado livre</text>
-</svg>
+<svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg"><text x="100" y="20" dominant-baseline="middle" text-anchor="middle" font-family="'Inter',Arial,sans-serif" font-size="17" font-weight="800" fill="#FFE600" letter-spacing="-0.5">mercado</text><text x="100" y="20" dominant-baseline="middle" text-anchor="middle" font-family="'Inter',Arial,sans-serif" font-size="17" font-weight="800" fill="#FFE600" letter-spacing="-0.5" dx="62">livre</text><ellipse cx="100" cy="20" rx="68" ry="16" fill="none" stroke="#FFE600" stroke-width="1.5" opacity="0.3"/></svg>

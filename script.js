@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const trackScroll = () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+    const scrollPercent = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 100;
 
     scrollMarks.forEach(mark => {
       if (scrollPercent >= mark && !reachedMarks.has(mark)) {
@@ -113,6 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, seconds * 1000);
   });
+
+  // Atualiza o ano no footer dinamicamente
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
   // Verifica se há Pixel ID real
   if (PIXEL_ID === 'SEU_PIXEL_ID') {
