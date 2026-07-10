@@ -266,7 +266,7 @@ a {
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee-left 35s linear infinite;
+  animation: marquee-left 55s linear infinite;
 }
 
 .marquee__track:hover {
