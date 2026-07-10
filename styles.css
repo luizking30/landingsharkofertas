@@ -632,6 +632,10 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .testimonials .container {
+    max-width: 1200px;
+  }
+
   .testimonials__gallery {
     grid-template-columns: repeat(4, 1fr);
   }
