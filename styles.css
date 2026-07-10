@@ -237,8 +237,6 @@ a {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: #fff;
   border-color: transparent;
-  padding: 0.6rem 1.1rem;
-  font-size: 0.9rem;
 }
 
 .btn--instagram:hover {
@@ -246,9 +244,20 @@ a {
   box-shadow: 0 4px 16px rgba(220, 39, 67, 0.35);
 }
 
+.btn--small {
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+}
+
 .btn--small .btn__icon {
   width: 1rem;
   height: 1rem;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .btn--pulse {
@@ -575,6 +584,21 @@ a {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Navbar: icon-only on very small screens */
+@media (max-width: 480px) {
+  .header__actions {
+    gap: 0.35rem;
+  }
+
+  .header__actions .btn--small {
+    padding: 0.5rem;
+  }
+
+  .header__actions .btn__label {
+    display: none;
+  }
 }
 
 /* Desktop */
