@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Animação de scroll (reveal elements)
-  const revealElements = document.querySelectorAll('.step-card, .testimonials__img, .compare__card, .section__title, .section__subtitle');
+  const revealElements = document.querySelectorAll('.step-card, .about-card, .benefit-card, .faq__item, .tip__card, .testimonials__img, .compare__card, .section__title, .section__subtitle');
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -153,5 +153,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Verifica se há Pixel ID real
   if (PIXEL_ID === 'SEU_PIXEL_ID') {
     console.warn('[Shark Ofertas] Meta Pixel ID não configurado. Substitua SEU_PIXEL_ID em script.js e index.html');
+  }
+
+  // Banner de Cookies / LGPD
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieAccept = document.getElementById('cookie-accept');
+  const stickyCta = document.querySelector('.sticky-cta');
+
+  if (cookieBanner && cookieAccept) {
+    const cookiesAccepted = localStorage.getItem('shark_cookies_accepted');
+
+    if (!cookiesAccepted) {
+      cookieBanner.classList.add('cookie-banner--visible');
+      if (stickyCta) stickyCta.style.bottom = '4.5rem';
+    }
+
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('shark_cookies_accepted', 'true');
+      cookieBanner.classList.remove('cookie-banner--visible');
+      if (stickyCta) stickyCta.style.bottom = '1rem';
+    });
   }
 });

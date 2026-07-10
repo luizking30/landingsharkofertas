@@ -473,6 +473,216 @@ a {
   text-align: center;
 }
 
+/* Sobre */
+.about__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.about-card {
+  background: rgba(10, 22, 41, 0.6);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.08);
+}
+
+.about-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.about-card__text {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Benefícios */
+.benefits__grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.benefit-card {
+  background: rgba(10, 22, 41, 0.6);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.08);
+}
+
+.benefit-card__icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.benefit-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-card__text {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* FAQ */
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq__item {
+  background: rgba(5, 11, 20, 0.6);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s ease;
+}
+
+.faq__question:hover {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: #00d4ff;
+  flex-shrink: 0;
+}
+
+.faq__item[open] .faq__question::after {
+  content: '−';
+}
+
+.faq__answer {
+  padding: 0 1.25rem 1.25rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq__answer p + p {
+  margin-top: 0.75rem;
+}
+
+/* Dica do Dia */
+.tip__card {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(37, 211, 102, 0.1) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tip__badge {
+  display: inline-block;
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.tip__title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.tip__text {
+  color: #cbd5e1;
+  font-size: 1rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Banner de Cookies / LGPD */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+  background: rgba(5, 11, 20, 0.95);
+  border-top: 1px solid rgba(0, 212, 255, 0.15);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.cookie-banner--visible {
+  transform: translateY(0);
+}
+
+.cookie-banner__text {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0;
+}
+
+.cookie-banner__btn {
+  background: #00d4ff;
+  color: #050b14;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cookie-banner__btn:hover {
+  background: #33ddff;
+}
+
 /* CTA Final */
 .final-cta {
   text-align: center;
@@ -625,6 +835,14 @@ a {
   }
 
   .steps__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .about__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .benefits__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
