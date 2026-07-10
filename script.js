@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Animação de scroll (reveal elements)
-  const revealElements = document.querySelectorAll('.step-card, .testimonial, .compare__card, .section__title, .section__subtitle');
+  const revealElements = document.querySelectorAll('.step-card, .testimonials__img, .compare__card, .section__title, .section__subtitle');
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
