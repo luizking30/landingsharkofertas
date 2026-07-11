@@ -14,7 +14,7 @@ Landing page de captura para grupos de promoções no WhatsApp e Telegram.
 2. Clique em **Add New Project**
 3. Importe o repositório `luizking30/landingsharkofertas`
 4. Clique em **Deploy**
-5. O link será algo como `https://landingsharkofertas.vercel.app`
+5. O link será algo como `https://sharkofertas.vercel.app`
 
 ## Como atualizar a página
 
