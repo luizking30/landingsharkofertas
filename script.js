@@ -164,20 +164,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Banner de Cookies / LGPD
   const cookieBanner = document.getElementById('cookie-banner');
   const cookieAccept = document.getElementById('cookie-accept');
-  const stickyCta = document.querySelector('.sticky-cta');
+  const stickySocial = document.querySelector('.sticky-social');
 
   if (cookieBanner && cookieAccept) {
     const cookiesAccepted = localStorage.getItem('shark_cookies_accepted');
 
     if (!cookiesAccepted) {
       cookieBanner.classList.add('cookie-banner--visible');
-      if (stickyCta) stickyCta.style.bottom = '4.5rem';
+      if (stickySocial) stickySocial.style.bottom = '4.5rem';
     }
 
     cookieAccept.addEventListener('click', () => {
       localStorage.setItem('shark_cookies_accepted', 'true');
       cookieBanner.classList.remove('cookie-banner--visible');
-      if (stickyCta) stickyCta.style.bottom = '1rem';
+      if (stickySocial) stickySocial.style.bottom = '1rem';
     });
   }
 });

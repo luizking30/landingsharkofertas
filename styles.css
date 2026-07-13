@@ -790,44 +790,71 @@ a {
   flex-shrink: 0;
 }
 
-/* Sticky CTA */
-.sticky-cta {
+/* Sticky social buttons */
+.sticky-social {
   position: fixed;
   bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 1rem;
   z-index: 99;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #25d366;
-  color: #fff;
-  padding: 0.85rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 700;
-  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
   animation: slideUp 0.5s ease-out;
 }
 
-.sticky-cta:hover {
-  transform: translateX(-50%) translateY(-2px);
-  box-shadow: 0 6px 32px rgba(37, 211, 102, 0.55);
+.sticky-social__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.sticky-cta .btn__icon,
-.sticky-cta__icon {
-  width: 1.25rem;
-  height: 1.25rem;
+.sticky-social__btn:hover {
+  transform: translateY(-3px);
+}
+
+.sticky-social__btn i,
+.sticky-social__btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.sticky-social__btn--whatsapp {
+  background: #25d366;
+}
+
+.sticky-social__btn--whatsapp:hover {
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+.sticky-social__btn--telegram {
+  background: #38bdf8;
+}
+
+.sticky-social__btn--telegram:hover {
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.5);
+}
+
+.sticky-social__btn--instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.sticky-social__btn--instagram:hover {
+  box-shadow: 0 6px 24px rgba(220, 39, 67, 0.5);
 }
 
 @keyframes slideUp {
   from {
-    transform: translateX(-50%) translateY(100px);
+    transform: translateY(100px);
     opacity: 0;
   }
   to {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
