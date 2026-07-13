@@ -794,10 +794,11 @@ a {
 .sticky-social {
   position: fixed;
   bottom: 1rem;
-  right: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 99;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.6rem;
   animation: slideUp 0.5s ease-out;
 }
@@ -850,11 +851,11 @@ a {
 
 @keyframes slideUp {
   from {
-    transform: translateY(100px);
+    transform: translateX(-50%) translateY(100px);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
 }
