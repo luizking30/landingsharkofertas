@@ -5,7 +5,7 @@ Landing page de captura para grupos de promoções no WhatsApp e Telegram.
 ## Links
 
 - WhatsApp: https://chat.whatsapp.com/G2jMVIxrk8y8mB4ER1YMgR
-- Telegram: https://t.me/+8mrY68CbArM2ODA5
+- Telegram: https://telegram.me/sharkofertass
 - Instagram: https://www.instagram.com/shark.ofertass
 
 ## Deploy na Vercel
@@ -63,7 +63,7 @@ No `index.html`, procure por `https://chat.whatsapp.com/G2jMVIxrk8y8mB4ER1YMgR` 
 
 ### Trocar o link do Telegram
 
-No `index.html`, procure por `https://t.me/+8mrY68CbArM2ODA5` e substitua pelo novo link.
+No `index.html`, procure por `https://telegram.me/sharkofertass` e substitua pelo novo link.
 
 ### Trocar o Instagram
 
