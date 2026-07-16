@@ -1,7 +1,7 @@
 // ====== CONFIGURAÇÃO CENTRAL — mude links e ícones aqui ======
 const SOCIAL_LINKS = {
   whatsapp: 'https://chat.whatsapp.com/G2jMVIxrk8y8mB4ER1YMgR',
-  telegram: 'https://telegram.me/sharkofertass',
+  telegram: 'https://t.me/sharkofertasss',
   instagram: 'https://www.instagram.com/shark.ofertass'
 };
 
