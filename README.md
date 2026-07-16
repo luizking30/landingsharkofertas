@@ -51,7 +51,7 @@ A Vercel atualiza automaticamente.
 ├── index.html          # Estrutura da landing page
 ├── styles.css          # Estilos visuais
 ├── script.js           # Rastreamento e animações
-├── logo shark ofertas.png  # Logo da marca
+├── logo-shark-ofertas.jpeg  # Logo da marca
 └── README.md           # Este arquivo
 ```
 
