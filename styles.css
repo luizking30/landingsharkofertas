@@ -95,7 +95,7 @@ a {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 5rem 0 4rem;
+  padding: 4rem 0 4rem;
   background: radial-gradient(ellipse at top, #0a2a4a 0%, #050b14 60%);
   overflow: hidden;
 }
