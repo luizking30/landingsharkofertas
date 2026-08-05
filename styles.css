@@ -879,6 +879,23 @@ a {
 
 /* Navbar e footer: botões compactos mas com texto em telas pequenas */
 @media (max-width: 480px) {
+  .header {
+    padding: 0.4rem 0;
+  }
+
+  .logo__img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo__text {
+    font-size: 0.95rem;
+  }
+
+  .header__inner {
+    gap: 0.5rem;
+  }
+
   .header__actions,
   .footer__actions {
     gap: 0.35rem;
@@ -888,8 +905,14 @@ a {
   .footer__actions .btn--small {
     width: auto;
     max-width: none;
-    padding: 0.5rem 0.85rem;
-    font-size: 0.78rem;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.72rem;
+  }
+
+  .header__actions .btn--small .btn__icon,
+  .footer__actions .btn--small .btn__icon {
+    width: 0.85rem;
+    height: 0.85rem;
   }
 
   .header__actions .btn__label,
