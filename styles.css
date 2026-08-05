@@ -95,9 +95,15 @@ a {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 7rem 0 5rem;
+  padding: 5rem 0 4rem;
   background: radial-gradient(ellipse at top, #0a2a4a 0%, #050b14 60%);
   overflow: hidden;
+}
+
+@media (min-width: 481px) {
+  .hero {
+    padding: 7rem 0 5rem;
+  }
 }
 
 .hero::before {
