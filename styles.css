@@ -221,7 +221,7 @@ a {
 }
 
 .btn--pulse {
-  animation: pulse 2s infinite;
+  animation: pulse 2s infinite, shake 3s infinite;
 }
 
 @keyframes pulse {
@@ -233,6 +233,27 @@ a {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes shake {
+  0%, 88%, 100% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(-4px) rotate(-2deg);
+  }
+  92% {
+    transform: translateX(4px) rotate(2deg);
+  }
+  94% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  96% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  98% {
+    transform: translateX(0);
   }
 }
 
@@ -795,7 +816,7 @@ a {
   color: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  animation: stickyPulse 2s infinite, stickyShake 3s infinite;
+  animation: stickyPulse 2s infinite, shake 3s infinite;
 }
 
 .sticky-social__btn:hover {
@@ -833,27 +854,6 @@ a {
   }
 }
 
-@keyframes stickyShake {
-  0%, 88%, 100% {
-    transform: translateX(0);
-  }
-  90% {
-    transform: translateX(-4px) rotate(-2deg);
-  }
-  92% {
-    transform: translateX(4px) rotate(2deg);
-  }
-  94% {
-    transform: translateX(-3px) rotate(-1deg);
-  }
-  96% {
-    transform: translateX(3px) rotate(1deg);
-  }
-  98% {
-    transform: translateX(0);
-  }
-}
-
 @keyframes slideUp {
   from {
     transform: translateX(-50%) translateY(100px);
@@ -877,7 +877,7 @@ a {
   transform: translateY(0);
 }
 
-/* Navbar e footer: icon-only on very small screens */
+/* Navbar e footer: botões compactos mas com texto em telas pequenas */
 @media (max-width: 480px) {
   .header__actions,
   .footer__actions {
@@ -886,12 +886,15 @@ a {
 
   .header__actions .btn--small,
   .footer__actions .btn--small {
-    padding: 0.5rem;
+    width: auto;
+    max-width: none;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
   }
 
   .header__actions .btn__label,
   .footer__actions .btn__label {
-    display: none;
+    display: inline;
   }
 }
 
