@@ -150,14 +150,6 @@ a {
   display: block;
 }
 
-.hero__buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
 .hero__trust {
   color: #94a3b8;
   font-size: 0.95rem;
@@ -366,7 +358,6 @@ a {
 .steps__grid {
   display: grid;
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .step-card {
@@ -404,11 +395,6 @@ a {
 .step-card__text {
   color: #94a3b8;
   font-size: 0.95rem;
-}
-
-.steps__cta {
-  text-align: center;
-  margin-top: 2rem;
 }
 
 /* Comparativo */
@@ -488,7 +474,6 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
-  margin-bottom: 2.5rem;
 }
 
 .testimonials__img {
@@ -497,10 +482,6 @@ a {
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(0, 212, 255, 0.1);
-}
-
-.testimonials__cta {
-  text-align: center;
 }
 
 /* Sobre */
@@ -749,10 +730,6 @@ a {
   margin: 0 auto 2rem;
 }
 
-.final-cta .btn {
-  margin: 0 auto 1rem;
-}
-
 .final-cta__tagline {
   margin-top: 2rem;
   font-size: 1.1rem;
@@ -780,12 +757,6 @@ a {
 .footer__text {
   color: #64748b;
   font-size: 0.9rem;
-}
-
-.footer__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
 }
 
 /* Placeholders de ícones injetados via JS */
@@ -902,38 +873,29 @@ a {
     gap: 0.5rem;
   }
 
-  .header__actions,
-  .footer__actions {
+  .header__actions {
     gap: 0.35rem;
   }
 
-  .header__actions .btn--small,
-  .footer__actions .btn--small {
+  .header__actions .btn--small {
     width: auto;
     max-width: none;
     padding: 0.4rem 0.7rem;
     font-size: 0.72rem;
   }
 
-  .header__actions .btn--small .btn__icon,
-  .footer__actions .btn--small .btn__icon {
+  .header__actions .btn--small .btn__icon {
     width: 0.85rem;
     height: 0.85rem;
   }
 
-  .header__actions .btn__label,
-  .footer__actions .btn__label {
+  .header__actions .btn__label {
     display: inline;
   }
 }
 
 /* Desktop */
 @media (min-width: 640px) {
-  .hero__buttons {
-    flex-direction: row;
-    justify-content: center;
-  }
-
   .btn {
     width: auto;
   }
