@@ -785,22 +785,32 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 50%;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  min-height: 3.5rem;
+  border-radius: 3.5rem;
+  font-weight: 800;
+  font-size: 1.05rem;
+  white-space: nowrap;
   color: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: stickyPulse 2s infinite, stickyShake 3s infinite;
 }
 
 .sticky-social__btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.03);
 }
 
 .sticky-social__btn i,
 .sticky-social__btn svg {
   width: 1.5rem;
   height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.sticky-social__label {
+  line-height: 1;
 }
 
 .sticky-social__btn--whatsapp {
@@ -808,7 +818,40 @@ a {
 }
 
 .sticky-social__btn--whatsapp:hover {
-  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes stickyPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0), 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes stickyShake {
+  0%, 88%, 100% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(-4px) rotate(-2deg);
+  }
+  92% {
+    transform: translateX(4px) rotate(2deg);
+  }
+  94% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  96% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  98% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideUp {
@@ -907,6 +950,15 @@ a {
 /* Ajuste para botão sticky não cobrir conteúdo */
 body {
   padding-bottom: 5rem;
+}
+
+/* Sticky button responsivo em telas pequenas */
+@media (max-width: 480px) {
+  .sticky-social__btn {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.95rem;
+    min-height: 3.25rem;
+  }
 }
 
 /* Acessibilidade: respeitar preferência de movimento reduzido */
