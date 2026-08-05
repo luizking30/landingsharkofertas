@@ -167,4 +167,151 @@ document.addEventListener('DOMContentLoaded', () => {
       if (stickySocial) stickySocial.style.bottom = '1rem';
     });
   }
+
+  // ====== ANIMAÇÕES DE CONVERSÃO ======
+
+  // Estado central: uma única fonte de verdade para "pessoas entrando"
+  const memberCountEl = document.getElementById('member-count');
+  const joinedTodayEl = document.getElementById('joined-today');
+  const spotsLeftEl = document.getElementById('spots-left');
+  const toastContainer = document.getElementById('toast-container');
+
+  let currentMembers = 7600;
+  const targetMembers = 7650;
+  let joinedToday = parseInt(joinedTodayEl ? joinedTodayEl.textContent : '127', 10) || 127;
+  let spotsLeft = parseInt(spotsLeftEl ? spotsLeftEl.textContent : '8', 10) || 8;
+
+  function formatNumber(n) {
+    return n.toLocaleString('pt-BR');
+  }
+
+  // Inicializa display
+  if (memberCountEl) memberCountEl.textContent = formatNumber(currentMembers);
+  if (joinedTodayEl) joinedTodayEl.textContent = joinedToday;
+  if (spotsLeftEl) spotsLeftEl.textContent = spotsLeft;
+
+  // Dados para toast
+  const names = [
+    'João', 'Maria', 'Pedro', 'Ana', 'Carlos', 'Juliana', 'Lucas', 'Patrícia',
+    'Rafael', 'Camila', 'Bruno', 'Fernanda', 'Gabriel', 'Larissa', 'Thiago',
+    'Beatriz', 'Felipe', 'Amanda', 'Ricardo', 'Letícia', 'Marcelo', 'Vanessa',
+    'Diego', 'Carla', 'Eduardo', 'Bruna', 'Vinícius', 'Tatiane', 'Gustavo',
+    'Mariana', 'André', 'Cristiane', 'Leandro', 'Daniela', 'Paulo', 'Renata',
+    'Marcos', 'Simone', 'Fábio', 'Priscila', 'Roberto', 'Jéssica', 'Rodrigo',
+    'Aline', 'Gerson', 'Natália', 'Sérgio', 'Bianca', 'Cláudio', 'Vivian'
+  ];
+
+  const cities = [
+    'São Paulo, SP', 'Rio de Janeiro, RJ', 'Belo Horizonte, MG', 'Curitiba, PR',
+    'Porto Alegre, RS', 'Salvador, BA', 'Recife, PE', 'Fortaleza, CE',
+    'Brasília, DF', 'Goiânia, GO', 'Manaus, AM', 'Belém, PA',
+    'Campinas, SP', 'Florianópolis, SC', 'Natal, RN', 'Cuiabá, MT'
+  ];
+
+  const emojis = ['🦈', '💰', '🔥', '✅', '👏', '🛒'];
+
+  // Único evento: "uma nova pessoa entrou no grupo"
+  // Dispara todos os 3 contadores ao mesmo tempo
+  function simulateNewMember() {
+    const name = names[Math.floor(Math.random() * names.length)];
+    const city = cities[Math.floor(Math.random() * cities.length)];
+    const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // 1. Incrementa contador principal (se ainda não chegou no limite)
+    if (currentMembers < targetMembers) {
+      currentMembers++;
+      if (memberCountEl) memberCountEl.textContent = formatNumber(currentMembers);
+    }
+
+    // 2. Incrementa "entraram hoje"
+    joinedToday++;
+    if (joinedTodayEl) joinedTodayEl.textContent = joinedToday;
+
+    // 3. Decrementa vagas disponíveis (para em 1 para não zerar)
+    if (spotsLeft > 1) {
+      spotsLeft--;
+      if (spotsLeftEl) spotsLeftEl.textContent = spotsLeft;
+    }
+
+    // 3. Mostra toast com nome + cidade
+    if (toastContainer) {
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML =
+        '<div class="toast__avatar">' + emoji + '</div>' +
+        '<div class="toast__body">' +
+          '<div class="toast__name">' + name + '</div>' +
+          '<div class="toast__action"><strong>entrou no grupo</strong> · ' + city + '</div>' +
+        '</div>';
+
+      toastContainer.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.add('toast--visible');
+      });
+
+      setTimeout(() => {
+        toast.classList.remove('toast--visible');
+        toast.classList.add('toast--hide');
+        setTimeout(() => toast.remove(), 400);
+      }, 5000);
+    }
+  }
+
+  // Agenda o próximo evento de "nova pessoa entrou"
+  function scheduleNextMember() {
+    const delay = 8000 + Math.random() * 12000;
+    setTimeout(() => {
+      simulateNewMember();
+      scheduleNextMember();
+    }, delay);
+  }
+
+  // Primeira entrada após 4s, depois continua no loop
+  setTimeout(() => {
+    simulateNewMember();
+    scheduleNextMember();
+  }, 4000);
+
+  // Timer de escassez: contagem regressiva de 24h (independente)
+  const urgencyClockEl = document.getElementById('urgency-clock');
+  if (urgencyClockEl) {
+    const STORAGE_KEY = 'shark_urgency_end';
+    let endTime;
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      endTime = parseInt(saved, 10);
+      if (endTime <= Date.now()) {
+        endTime = Date.now() + 24 * 60 * 60 * 1000;
+        localStorage.setItem(STORAGE_KEY, endTime.toString());
+      }
+    } else {
+      endTime = Date.now() + 24 * 60 * 60 * 1000;
+      localStorage.setItem(STORAGE_KEY, endTime.toString());
+    }
+
+    function updateTimer() {
+      const remaining = Math.max(0, endTime - Date.now());
+      const totalSeconds = Math.floor(remaining / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      urgencyClockEl.textContent =
+        String(hours).padStart(2, '0') + ':' +
+        String(minutes).padStart(2, '0') + ':' +
+        String(seconds).padStart(2, '0');
+
+      if (remaining <= 0) {
+        endTime = Date.now() + 24 * 60 * 60 * 1000;
+        localStorage.setItem(STORAGE_KEY, endTime.toString());
+      }
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+
+  // ====== FIM DAS ANIMAÇÕES DE CONVERSÃO ======
 });

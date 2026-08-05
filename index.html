@@ -95,7 +95,15 @@
             <source media="(min-width: 769px)" srcset="images/banner-horizontal-desktop.jpeg">
             <img src="images/banner-horizontal-desktop.jpeg" alt="Shark Ofertas - Entre no grupo e aproveite. Ofertas exclusivas todos os dias nos seus apps favoritos." class="hero__banner-img" fetchpriority="high">
           </picture>
-          <p class="hero__trust">Vem economizar junto com + de <strong>7.653 pessoas</strong> que confiam na Shark Ofertas.</p>
+          <p class="hero__trust">Vem economizar junto com + de <strong id="member-count">7.600</strong> pessoas que confiam na Shark Ofertas.</p>
+          <div class="live-badge" id="live-badge">
+            <span class="live-badge__dot"></span>
+            <span class="live-badge__text"><strong id="joined-today">127</strong> pessoas entraram hoje</span>
+          </div>
+          <div class="spots-badge" id="spots-badge">
+            <span class="spots-badge__icon">⚠️</span>
+            <span class="spots-badge__text">Restam apenas <strong id="spots-left">8</strong> vagas disponíveis</span>
+          </div>
         </div>
       </div>
     </section>
@@ -361,6 +369,11 @@
     <!-- CTA Final -->
     <section class="final-cta section section--alt">
       <div class="container">
+        <div class="urgency-timer" id="urgency-timer">
+          <span class="urgency-timer__icon">⏰</span>
+          <span class="urgency-timer__label">Oferta especial acaba em:</span>
+          <span class="urgency-timer__clock" id="urgency-clock">23:59:59</span>
+        </div>
         <h2 class="final-cta__title">Ou você entra agora,<br>ou continua pagando <span class="text-accent">preço cheio.</span></h2>
         <p class="final-cta__text">É de graça, sem spam, sem pegadinha. Enquanto você pensa, o Shark já achou mais umas 4 promoções. Entra logo.</p>
         <p class="final-cta__tagline">Se não tá no Shark, tá caro.</p>
@@ -387,6 +400,8 @@
     <p class="cookie-banner__text">Usamos cookies para melhorar sua experiência. Ao continuar navegando, você aceita nossa política de uso.</p>
     <button class="cookie-banner__btn" id="cookie-accept" type="button" data-track="cookie-accept">Entendi</button>
   </div>
+
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <script src="script.js" defer></script>
 </body>
